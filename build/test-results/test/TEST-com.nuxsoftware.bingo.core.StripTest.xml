@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.nuxsoftware.bingo.core.StripTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-04-19T12:13:22" hostname="mac-pl-wojole.local" time="0.005">
+  <properties/>
+  <testcase name="stripShouldHaveTickets()" classname="com.nuxsoftware.bingo.core.StripTest" time="0.003"/>
+  <testcase name="numbersInTicketColumnsAreOrderedASC()" classname="com.nuxsoftware.bingo.core.StripTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

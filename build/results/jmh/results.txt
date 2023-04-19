@@ -1,0 +1,2 @@
+Benchmark                          Mode  Cnt      Score      Error  Units
+StripGeneratorBenchmark.generate  thrpt   10  52340.020 ± 4269.825  ops/s

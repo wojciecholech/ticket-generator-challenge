@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bingo.jmh.iml" filepath="$PROJECT_DIR$/.idea/modules/bingo.jmh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bingo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/bingo.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bingo.test.iml" filepath="$PROJECT_DIR$/.idea/modules/bingo.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.nuxplanet.bingo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.nuxplanet.bingo.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.nuxplanet.bingo.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.nuxplanet.bingo.test.iml" />
+    </modules>
+  </component>
+</project>
