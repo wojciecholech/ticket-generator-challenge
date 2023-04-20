@@ -2,7 +2,6 @@ package com.nuxsoftware.bingo.core;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.nuxsoftware.bingo.core.Strip;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;

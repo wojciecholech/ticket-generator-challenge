@@ -18,6 +18,7 @@
 - [x] Generate 10k strip in less than 1 second.
 
 ## Sample output
+The blank space is represented by -1 number.
 ```
 ---------------------
 STRIP

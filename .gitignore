@@ -1,0 +1,58 @@
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+*.pcap
+**/requests.log
+system-test/load-tests/config
+system-test/failure_test_results
+system-test/docker-compose.override.yml
+logs
+venv
+*.swp
+scripts/traffic-statistics/*.csv
+scripts/traffic-statistics/*_settings.py
+wacdr
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### LOMBOK ###
+lombok.config
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+/bin/
+
+#buildstuff
+**/bin/
+**/build/
+**/out/
+
+### pid stuff
+.attach_pid*
+
+### NPM
+**/node_modules
+**/package-lock.json
+
+### Mac
+.DS_Store
+
+### Python
+**/__pycache__

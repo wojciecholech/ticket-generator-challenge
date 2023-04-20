@@ -1,6 +1,6 @@
 package com.nuxsoftware.bingo.core;
 
-import static com.nuxsoftware.bingo.core.Strip.TOTAL_ROWS;
+import static com.nuxsoftware.bingo.core.Strip.STRIP_ROWS;
 import static com.nuxsoftware.bingo.core.Ticket.BLANK_SPACES;
 import static com.nuxsoftware.bingo.core.Ticket.NUMBER_SPACES;
 import static com.nuxsoftware.bingo.core.Ticket.TICKET_COLUMNS;
@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class StripPositionGenerator {
 
   private final Random random;
-  private final boolean[][] positions = new boolean[18][9];
+  private final boolean[][] positions = new boolean[STRIP_ROWS][TICKET_COLUMNS];
 
   public StripPositionGenerator(Random random) {
     this.random = random;
@@ -36,7 +36,7 @@ public class StripPositionGenerator {
     var numbers = new HashMap<Integer, Integer>();
     var blanks = new HashMap<Integer, Integer>();
 
-    for (int columnNo = 0; columnNo < TOTAL_ROWS; columnNo++) {
+    for (int columnNo = 0; columnNo < STRIP_ROWS; columnNo++) {
       var row = getRow(columnNo, numbers, blanks);
 
       for (int rowNo = 0; rowNo < TICKET_COLUMNS; rowNo++) {
@@ -67,7 +67,7 @@ public class StripPositionGenerator {
 
   private Map<Integer, Boolean> outOfRange(Map<Integer, Integer> numbers, boolean isBlank) {
     return numbers.entrySet().stream()
-        .filter(entry -> entry.getValue() >= (isBlank ? TOTAL_ROWS - Ticket.COLUMN_RANGES.get(entry.getKey()).size() : Ticket.COLUMN_RANGES.get(entry.getKey()).size()))
+        .filter(entry -> entry.getValue() >= (isBlank ? STRIP_ROWS - Ticket.COLUMN_RANGES.get(entry.getKey()).size() : Ticket.COLUMN_RANGES.get(entry.getKey()).size()))
         .collect(Collectors.toMap(Map.Entry::getKey, v -> isBlank));
   }
 

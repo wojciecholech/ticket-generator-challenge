@@ -1,1 +1,0 @@
-JMH S 49 com.nuxsoftware.bingo.jmh.StripGeneratorBenchmark S 80 com.nuxsoftware.bingo.jmh.jmh_generated.StripGeneratorBenchmark_generate_jmhTest S 8 generate S 10 Throughput E A 1 1 1 E I 1 2 E E E E E I 1 2 E E E E E E E E E 

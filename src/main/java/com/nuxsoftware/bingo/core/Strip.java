@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class Strip {
 
-  public static final int TOTAL_ROWS = 18;
+  public static final int STRIP_ROWS = 18;
 
   private final int[][] table;
 
@@ -31,7 +31,7 @@ public class Strip {
   private List<Ticket> split(int[][] data) {
     var tickets = new ArrayList<Ticket>();
 
-    for (int ticketNo = 0; ticketNo < TOTAL_ROWS; ticketNo = ticketNo + 3) {
+    for (int ticketNo = 0; ticketNo < STRIP_ROWS; ticketNo = ticketNo + 3) {
       var ticket = orderColumnNumbers(Arrays.copyOfRange(data, ticketNo, ticketNo + 3),
           new int[3][TICKET_COLUMNS]);
       tickets.add(new Ticket(ticket));

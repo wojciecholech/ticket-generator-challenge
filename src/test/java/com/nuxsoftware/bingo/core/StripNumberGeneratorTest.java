@@ -2,7 +2,6 @@ package com.nuxsoftware.bingo.core;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.nuxsoftware.bingo.core.StripNumberGenerator;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
