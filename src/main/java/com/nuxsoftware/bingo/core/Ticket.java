@@ -21,9 +21,11 @@ public class Ticket {
 
   @Override
   public String toString() {
-    var builder = new StringBuilder();
+    var builder = new StringBuilder("------------------------------------------\n");
     for (int i = 0; i < data.length; i++) {
-      builder.append(Arrays.toString(data[i])).append("\n");
+      Arrays.stream(data[i])
+          .forEach(cell -> builder.append(cell == -1 ? "--   " :String.format("%2d   ", cell)));
+      builder.append("\n");
     }
     return builder.toString();
   }
