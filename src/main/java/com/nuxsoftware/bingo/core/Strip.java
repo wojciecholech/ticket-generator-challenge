@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 public class Strip {
 
   public static final int STRIP_ROWS = 18;
+  public static final int STRIP_TICKETS = 6;
 
   private final int[][] table;
 
@@ -25,7 +26,7 @@ public class Strip {
   public String toString() {
     return getTickets().stream()
         .map(Ticket::toString)
-        .collect(Collectors.joining("\n","---------------------\nSTRIP\n---------------------\n", ""));
+        .collect(Collectors.joining("\n","------------------------------------------\nSTRIP\n", ""));
   }
 
   private List<Ticket> split(int[][] data) {

@@ -1,9 +1,11 @@
 package com.nuxsoftware.bingo.core;
 
+import static com.nuxsoftware.bingo.core.Ticket.TICKET_COLUMNS;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.stream.IntStream;
 import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,13 +20,27 @@ class StripPositionGeneratorTest {
   }
 
   @Test
+  public void thereIsNoThreeBlanksInTicket() {
+    // given
+    var positions = generator.getPositions();
+
+    // then
+    for (int columnNo = 0; columnNo < TICKET_COLUMNS; columnNo++) {
+      for (int ticketNo = 0; ticketNo < 6; ticketNo++) {
+        assertThat(hasThreeBlanks(positions, ticketNo * 3, columnNo)).isFalse();
+      }
+    }
+  }
+
+  @Test
   public void countOfBlankSpacesNeedToBeFive() {
     // given
     var positions = generator.getPositions();
 
     // then
-    for (int rownNo = 0; rownNo < positions.length; rownNo++) {
-      assertThat(positions[rownNo]).containsOnly(false, false, false, false, true, true, true, true, true);
+    for (int rowNo = 0; rowNo < positions.length; rowNo++) {
+      assertThat(positionTypeCount(positions[rowNo], true)).isEqualTo(5);
+      assertThat(positionTypeCount(positions[rowNo], false)).isEqualTo(4);
     }
   }
 
@@ -89,4 +105,15 @@ class StripPositionGeneratorTest {
     assertThat(columnPositions).haveExactly(7, new Condition<>(v -> !v, "blank"));
   }
 
+  private int positionTypeCount(boolean[] row, boolean isNumber) {
+    return (int) IntStream.range(0, row.length)
+        .mapToObj(idx -> row[idx])
+        .filter(cell -> cell == isNumber)
+        .count();
+  }
+
+  private boolean hasThreeBlanks(boolean[][] positions, int ticketNo, int columnNo) {
+    return !positions[ticketNo][columnNo]
+        && !positions[ticketNo+1][columnNo] && !positions[ticketNo+2][columnNo];
+  }
 }
